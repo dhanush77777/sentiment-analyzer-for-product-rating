@@ -30,7 +30,7 @@ def phnbook():
     query="INSERT INTO demodb VALUES('{n}','{m}','{l}')".format(n=name,m=rating[0],l=marks)
     cursor.execute(query)
     connection.commit()
-    return render_template("home.html",pre="FEEDBACK SUBMITTED")
+    return "The rating for the product is {}".format(rating[0])
 
 
 
