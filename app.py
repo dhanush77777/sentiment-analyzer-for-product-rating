@@ -25,7 +25,7 @@ def phnbook():
     data=[name]
     vect=cv.transform(data).toarray()
     rating=clf.predict(vect)
-    connection=sqlite3.connect(currrentdir + "\demodb.db")
+    connection=sqlite3.connect("demodb.db")
     cursor=connection.cursor()
     query="INSERT INTO demodb VALUES('{n}','{m}','{l}')".format(n=name,m=rating[0],l=marks)
     cursor.execute(query)
